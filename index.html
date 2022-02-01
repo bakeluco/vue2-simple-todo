@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calcContainer">
+      <h1>Calculator</h1>
+      <form name="calc" id="calc">
+        <input readonly name="display" id="display" />
+        <div>
+          <input type="button" id="C" value="C" onclick="button('c')" />
+          <input
+            type="button"
+            id="percentage"
+            value="%"
+            onclick="button('%')"
+          />
+          <input
+            type="button"
+            id="erase"
+            value="<-"
+            onclick="eraseLastChar()"
+          />
+          <input type="button" id="divide" value="/" onclick="button('/')" />
+        </div>
+        <div>
+          <input type="button" id="seven" value="7" onclick="button(7)" />
+          <input type="button" id="eight" value="8" onclick="button(8)" />
+          <input type="button" id="nine" value="9" onclick="button(9)" />
+          <input type="button" id="mutiply" value="x" onclick="button('*')" />
+        </div>
+        <div>
+          <input type="button" id="four" value="4" onclick="button(4)" />
+          <input type="button" id="five" value="5" onclick="button(5)" />
+          <input type="button" id="six" value="6" onclick="button(6)" />
+          <input type="button" id="minus" value="-" onclick="button('-')" />
+        </div>
+        <div>
+          <input
+            type="button"
+            id="one"
+            value="1"
+            onclick="button(document.getElementById('one').value)"
+          />
+          <input
+            type="button"
+            id="two"
+            value="2"
+            onclick="button(document.getElementById('two').value)"
+          />
+          <input
+            type="button"
+            id="three"
+            value="3"
+            onclick="button(document.getElementById('three').value)"
+          />
+          <input
+            type="button"
+            id="plus"
+            value="+"
+            onclick="button(document.getElementById('plus').value)"
+          />
+        </div>
+        <div>
+          <input type="button" id="C" value="C" onclick="button('c')" />
+          <input type="button" id="zero" value="0" onclick="button(0)" />
+          <input type="button" id="coma" value="," onclick="button(',')" />
+          <input type="button" id="equals" value="=" onclick="result()" />
+        </div>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
