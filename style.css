@@ -1,34 +1,109 @@
 body {
-  min-height: 100vh;
-  background-color: rgb(51, 48, 48);
-  color: white;
+  background-color: rgb(59, 59, 59);
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-div.calcContainer {
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
+div#app {
+  margin: auto;
   width: 25vw;
-  margin: 5vw;
-  padding: 2vh;
-  background-color: rgb(17, 126, 126);
-  border-radius: 30px;
-}
-div input[type="button"],
-button {
-  min-width: 30px;
-  min-height: 30px;
-  width: 2.5vw;
-  height: 2.5vh;
-  margin: 0.5vh;
+  max-width: 200px;
+  max-height: 300px;
+  margin-top: 15vh;
+  background-color: #f3dedc;
+  padding: 5vw;
+  border-radius: 15px;
 }
 
-#display {
+div#addSomething {
+  /* margin-left: 5vw; */
+  text-align: center;
+  background-color: #f3dedc;
   padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+ol#list {
+  height: 20vw;
+  text-align: left;
+}
+
+#addItem {
+  background-color: rgb(35, 58, 1);
+  color: white;
+}
+#addItem:hover {
+  background-color: green;
+  color: white;
+}
+#addItem:active {
+  background-color: black;
+  color: white;
+}
+
+#deleteItem {
+  background-color: rgb(100, 4, 4);
+  color: white;
+}
+#deleteItem:hover {
+  background-color: red;
+}
+#deleteItem:active {
+  background-color: black;
+  color: red;
+}
+
+#cleanItems {
+  background-color: white;
+  color: black;
+}
+#cleanItems:hover {
+  background-color: red;
+  color: black;
+}
+#cleanItems:active {
+  background-color: rgb(0, 0, 0);
+  color: red;
+}
+
+#editButton {
+  color: rgb(0, 73, 0);
+}
+#editButton:hover {
+  color: green;
+}
+#editButton:active {
+  color: cyan;
+}
+
+#deleteButton {
+  color: red;
+}
+#deleteButton:hover {
+  color: blue;
+}
+#deleteButton:active {
+  color: cyan;
+}
+#listInput {
+  max-width: 100px;
+  padding: 5px;
+  /* border: none; */
+  margin-bottom: 4px;
+  border: 2px solid black;
+  background-color: #dbdbdb;
+  border-radius: 5px;
+}
+
+button#start {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

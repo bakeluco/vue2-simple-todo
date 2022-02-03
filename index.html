@@ -1,78 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Hello World!</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- VUE CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+</head>
+<body>
+    
+    <div id="app">
+        
+        <h1>{{ header }}</h1> 
 
-    <link rel="stylesheet" href="style.css" />
-    <title>Calculator</title>
-  </head>
-  <body>
-    <div class="calcContainer">
-      <h1>Calculator</h1>
-      <form name="calc" id="calc">
-        <input readonly name="display" id="display" />
-        <div>
-          <input type="button" id="C" value="C" onclick="button('c')" />
-          <input
-            type="button"
-            id="percentage"
-            value="%"
-            onclick="button('%')"
-          />
-          <input
-            type="button"
-            id="erase"
-            value="<-"
-            onclick="eraseLastChar()"
-          />
-          <input type="button" id="divide" value="/" onclick="button('/')" />
+        <p>{{message}}</p>
+
+        <ol v-if='!seen' id="list">
+            
+            <li v-for="item in todoList">
+                <input type="text" v-model="item.text" id="listInput">
+                <!-- <ion-icon name="create" id="editButton" v-on:click="editItem(item)"></ion-icon>  -->
+                <ion-icon name="close" id="deleteButton" @click="deleteItem(item)"></ion-icon>
+            </li>
+
+        </ol>
+        
+        <div v-if='!seen' id="addSomething">
+            <!-- <label for="addSomething">Add or edit item: </label> <br> -->
+            <input v-model="dynamicText" name="addItem" v-on:keydown.enter="addItem" placeholder="Add item:" id="listInput">
+            <!-- <ion-icon name="checkmark"></ion-icon> -->
+            <ion-icon name="add" id="addItem" @click="addItem"></ion-icon>
+            <!-- <ion-icon name="close" id="deleteItem" @click="deleteLastItem"></ion-icon> -->
+            <ion-icon name="trash" v-on:click="cleanList" id="cleanItems"></ion-icon>
         </div>
-        <div>
-          <input type="button" id="seven" value="7" onclick="button(7)" />
-          <input type="button" id="eight" value="8" onclick="button(8)" />
-          <input type="button" id="nine" value="9" onclick="button(9)" />
-          <input type="button" id="mutiply" value="x" onclick="button('*')" />
-        </div>
-        <div>
-          <input type="button" id="four" value="4" onclick="button(4)" />
-          <input type="button" id="five" value="5" onclick="button(5)" />
-          <input type="button" id="six" value="6" onclick="button(6)" />
-          <input type="button" id="minus" value="-" onclick="button('-')" />
-        </div>
-        <div>
-          <input
-            type="button"
-            id="one"
-            value="1"
-            onclick="button(document.getElementById('one').value)"
-          />
-          <input
-            type="button"
-            id="two"
-            value="2"
-            onclick="button(document.getElementById('two').value)"
-          />
-          <input
-            type="button"
-            id="three"
-            value="3"
-            onclick="button(document.getElementById('three').value)"
-          />
-          <input
-            type="button"
-            id="plus"
-            value="+"
-            onclick="button(document.getElementById('plus').value)"
-          />
-        </div>
-        <div>
-          <input type="button" id="C" value="C" onclick="button('c')" />
-          <input type="button" id="zero" value="0" onclick="button(0)" />
-          <input type="button" id="coma" value="," onclick="button(',')" />
-          <input type="button" id="equals" value="=" onclick="result()" />
-        </div>
-      </form>
+
+        <button v-if="seen" v-on:click="hideButton" id="start">Start!</button>
+
     </div>
+
+    <!-- MAIN JS -->
     <script src="main.js"></script>
-  </body>
+
+    <!-- IONICONS CDN -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+</body>
 </html>
